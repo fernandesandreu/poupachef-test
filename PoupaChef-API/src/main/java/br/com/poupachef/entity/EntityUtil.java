@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class EntityUtil {
+public abstract class EntityUtil {
 
 	@CreatedDate
 	@Column(nullable = false)
