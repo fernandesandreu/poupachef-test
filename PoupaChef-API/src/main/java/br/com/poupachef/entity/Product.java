@@ -3,7 +3,6 @@ package br.com.poupachef.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,7 +22,7 @@ public class Product extends EntityUtil {
 	private Integer stokQuantity;
 	@Column(nullable = false)
 	private Double unityPrice;
-	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
 	@JoinColumn(name = "supplierId")
 	private Supplier supplierId;
 

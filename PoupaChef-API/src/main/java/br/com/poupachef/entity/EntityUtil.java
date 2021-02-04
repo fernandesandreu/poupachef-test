@@ -1,10 +1,13 @@
 package br.com.poupachef.entity;
 
+import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -26,16 +29,19 @@ public abstract class EntityUtil {
 		return createDate;
 	}
 
-	public void setCreateDate(LocalDateTime createDate) {
-		this.createDate = createDate;
-	}
-
 	public LocalDateTime getLastUpdate() {
 		return lastUpdate;
 	}
 
-	public void setLastUpdate(LocalDateTime lastUpdate) {
-		this.lastUpdate = lastUpdate;
+	@PrePersist
+	private void getDate() throws UnknownHostException {
+		this.createDate = LocalDateTime.now();
+		this.lastUpdate = LocalDateTime.now();
+	}
+
+	@PreUpdate
+	private void updateDate() throws UnknownHostException {
+		this.lastUpdate = LocalDateTime.now();
 	}
 
 }

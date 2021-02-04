@@ -1,6 +1,7 @@
 package br.com.poupachef.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,8 +47,14 @@ public class SupplierServiceImpl implements SupplierService {
 		if (id == null) {
 			throw new IllegalArgumentException("Deve ser fornecido o código identificador do Fornecedor.");
 		}
+		
+		Optional<Supplier> supplier = this.repository.findById(id);
+		
+		if (!supplier.isPresent()) {
+			throw new IllegalArgumentException("Não foi encontrado Fornecedor com este código indentificador");
+		}
 
-		return this.repository.findById(id).get();
+		return supplier.get();
 	}
 
 	@Override

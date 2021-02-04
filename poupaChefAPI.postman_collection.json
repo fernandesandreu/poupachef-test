@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "ec28f9a7-2e8a-40bb-ac69-becfb87cbea8",
+		"name": "poupaChefAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "supplier",
+			"item": [
+				{
+					"name": "create-supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/supplier/create-supplier",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"supplier",
+								"create-supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createDate\": \"\",\r\n    \"lastUpdate\": \"\",\r\n    \"id\": 0,\r\n    \"name\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/supplier/update-supplier",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"supplier",
+								"update-supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-supplier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/supplier/get-supplier/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"supplier",
+								"get-supplier",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-supplier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/supplier/get-all-supplier",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"supplier",
+								"get-all-supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-supplier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createDate\": \"\",\r\n    \"lastUpdate\": \"\",\r\n    \"id\": ,\r\n    \"name\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/supplier/delete-supplier",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"supplier",
+								"delete-supplier"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create-product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"p1\",\r\n    \"stokQuantity\" : 10,\r\n    \"unityPrice\" : 9.9,\r\n    \"supplierId\" : \r\n    {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product/create-product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"create-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createDate\": \"2021-02-04T16:01:33.613\",\r\n    \"lastUpdate\": \"2021-02-04T16:01:33.613\",\r\n    \"id\": 1,\r\n    \"name\": \"p1\",\r\n    \"stokQuantity\": 45,\r\n    \"unityPrice\": 9.9,\r\n    \"supplierId\": {\r\n        \"createDate\": \"2021-02-04T16:01:28\",\r\n        \"lastUpdate\": \"2021-02-04T16:01:28\",\r\n        \"id\": 1,\r\n        \"name\": \"t1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product/update-product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"update-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-stok-product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduct\": 0,\r\n    \"quantity\": 0,\r\n    \"decrease\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product/update-stok-product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"update-stok-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/product/get-product/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"get-product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/product/get-all-product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"get-all-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createDate\": \"\",\r\n    \"lastUpdate\": \"\",\r\n    \"id\": 0,\r\n    \"name\": \"\",\r\n    \"stokQuantity\": 0,\r\n    \"unityPrice\": 0,\r\n    \"supplierId\": {\r\n        \"createDate\": \"\",\r\n        \"lastUpdate\": \"\",\r\n        \"id\": 0,\r\n        \"name\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product/delete-product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"delete-product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
